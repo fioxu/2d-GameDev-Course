@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://plfo3ghhoage"]
+[gd_scene load_steps=10 format=3 uid="uid://plfo3ghhoage"]
 
 [ext_resource type="Texture2D" uid="uid://c3hwsm5ugp8qw" path="res://lessons/chest/bottom.png" id="1_0ibnv"]
 [ext_resource type="Shader" path="res://lessons/chest/group_outline.gdshader" id="1_r7ow3"]
@@ -15,6 +15,14 @@ shader = ExtResource("1_r7ow3")
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/line_thickness = 4.0
 shader_parameter/viewport_scale = Vector2(1, 1)
+
+[sub_resource type="Animation" id="Animation_1d3gm"]
+resource_name = "open"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_blxln"]
+_data = {
+"open": SubResource("Animation_1d3gm")
+}
 
 [node name="Chest" type="Area2D"]
 script = ExtResource("1_vjs7a")
@@ -38,3 +46,8 @@ texture = ExtResource("2_15c77")
 [node name="Lock" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(0, 2)
 texture = ExtResource("3_q5yt0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_blxln")
+}
