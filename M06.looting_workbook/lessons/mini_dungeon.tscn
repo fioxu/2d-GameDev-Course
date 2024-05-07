@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cit7gnkdckyux"]
+[gd_scene load_steps=16 format=3 uid="uid://cit7gnkdckyux"]
 
 [ext_resource type="Texture2D" uid="uid://114x1a0rmx4l" path="res://assets/dungeon/smooth_dungeon_tileset.png" id="1_sym7n"]
 [ext_resource type="Texture2D" uid="uid://cae527caaj50v" path="res://assets/dungeon/shadow_map.png" id="2_jthdw"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://0i1g0cunmseb" path="res://lessons/items/apple.tscn" id="8_vjgie"]
 [ext_resource type="PackedScene" uid="uid://ctqyr0ufyoktk" path="res://lessons/items/key.tscn" id="9_emytn"]
 [ext_resource type="PackedScene" uid="uid://hdxqgspfcaur" path="res://lessons/items/potion.tscn" id="10_pm6kv"]
+[ext_resource type="PackedScene" uid="uid://b303k11frxk25" path="res://assets/bird/bird.tscn" id="11_qmbrj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6s4s5"]
 texture = ExtResource("1_sym7n")
@@ -331,9 +332,15 @@ position = Vector2(576, 236)
 possible_items = Array[PackedScene]([ExtResource("8_vjgie"), ExtResource("9_emytn"), ExtResource("10_pm6kv")])
 
 [node name="Chest2" parent="." instance=ExtResource("7_ptfim")]
-position = Vector2(446, 349)
+position = Vector2(453, 349)
 possible_items = Array[PackedScene]([ExtResource("8_vjgie"), ExtResource("9_emytn"), ExtResource("10_pm6kv")])
 
 [node name="Chest3" parent="." instance=ExtResource("7_ptfim")]
-position = Vector2(713, 350)
+position = Vector2(703, 345)
 possible_items = Array[PackedScene]([ExtResource("8_vjgie"), ExtResource("9_emytn"), ExtResource("10_pm6kv")])
+
+[node name="bird" parent="." instance=ExtResource("11_qmbrj")]
+position = Vector2(545, 419)
+
+[node name="bird2" parent="." instance=ExtResource("11_qmbrj")]
+position = Vector2(970, 115)
