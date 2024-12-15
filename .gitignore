@@ -13,3 +13,4 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+M09.top_down_movement_workbook/lessons/runner.tscn
