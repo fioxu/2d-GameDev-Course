@@ -20,14 +20,12 @@ position = Vector2(1056, 2144)
 position = Vector2(1344, 416)
 
 [node name="SimpleObstacle2" parent="." instance=ExtResource("1_bapfk")]
-position = Vector2(1712, 520)
+position = Vector2(1664, 496)
 
 [node name="SimpleObstacle3" parent="." instance=ExtResource("1_bapfk")]
 position = Vector2(2024, 416)
 
 [node name="SimpleObstacle4" parent="." instance=ExtResource("1_bapfk")]
-position = Vector2(2328, 520)
+position = Vector2(2320, 496)
 
 [node name="Circuit" parent="." instance=ExtResource("4_k5dwk")]
-visible = false
-position = Vector2(0, 32)
