@@ -14,7 +14,7 @@ position = Vector2(1920, 1344)
 texture = ExtResource("1_n05l2")
 
 [node name="Runner" parent="." instance=ExtResource("2_umstd")]
-position = Vector2(1056, 2144)
+position = Vector2(1072, 2144)
 
 [node name="SimpleObstacle" parent="." instance=ExtResource("1_bapfk")]
 position = Vector2(1344, 416)
