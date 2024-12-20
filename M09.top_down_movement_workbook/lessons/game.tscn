@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://domdidx11fybt"]
+[gd_scene load_steps=10 format=3 uid="uid://domdidx11fybt"]
 
 [ext_resource type="Script" path="res://lessons/game.gd" id="1_1d2fy"]
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_n05l2"]
 [ext_resource type="PackedScene" uid="uid://besl2b0j8rv01" path="res://lessons/runner.tscn" id="2_umstd"]
 [ext_resource type="PackedScene" uid="uid://dhnq1dpe5j5si" path="res://lessons/circuit.tscn" id="4_k5dwk"]
+[ext_resource type="PackedScene" uid="uid://blpqy1b5xjkr6" path="res://lessons/bouncer.tscn" id="5_mkmv4"]
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="5_sui5d"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_0gqic"]
 [ext_resource type="Script" path="res://assets/countdown/count_down.gd" id="8_m4cfg"]
@@ -28,7 +29,11 @@ area_width = 256
 [node name="Runner" parent="." instance=ExtResource("2_umstd")]
 unique_name_in_owner = true
 process_mode = 3
-position = Vector2(624, 1544)
+position = Vector2(904, 800)
+
+[node name="Bouncer" parent="." instance=ExtResource("5_mkmv4")]
+unique_name_in_owner = true
+position = Vector2(664, 1032)
 
 [node name="Circuit" parent="." instance=ExtResource("4_k5dwk")]
 process_mode = 3
