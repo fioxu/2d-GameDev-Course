@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://domdidx11fybt"]
+[gd_scene load_steps=10 format=3 uid="uid://domdidx11fybt"]
 
 [ext_resource type="Script" path="res://lessons/game.gd" id="1_1d2fy"]
+[ext_resource type="PackedScene" uid="uid://dje526462m8jk" path="res://lessons/simple_obstacle.tscn" id="1_bapfk"]
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_n05l2"]
 [ext_resource type="PackedScene" uid="uid://besl2b0j8rv01" path="res://lessons/runner.tscn" id="2_umstd"]
 [ext_resource type="PackedScene" uid="uid://dhnq1dpe5j5si" path="res://lessons/circuit.tscn" id="4_k5dwk"]
@@ -13,32 +14,38 @@
 y_sort_enabled = true
 script = ExtResource("1_1d2fy")
 
+[node name="Runner" parent="." instance=ExtResource("2_umstd")]
+unique_name_in_owner = true
+position = Vector2(624, 1544)
+
+[node name="FinishLine" parent="." instance=ExtResource("5_sui5d")]
+unique_name_in_owner = true
+position = Vector2(576, 1560)
+area_width = 256
+
+[node name="SimpleObstacle" parent="." instance=ExtResource("1_bapfk")]
+position = Vector2(1344, 416)
+
+[node name="SimpleObstacle2" parent="." instance=ExtResource("1_bapfk")]
+position = Vector2(1664, 496)
+
+[node name="SimpleObstacle3" parent="." instance=ExtResource("1_bapfk")]
+position = Vector2(2024, 416)
+
+[node name="SimpleObstacle4" parent="." instance=ExtResource("1_bapfk")]
+position = Vector2(2320, 496)
+
 [node name="CircuitBackground" type="Sprite2D" parent="."]
-process_mode = 3
 z_index = -1
 position = Vector2(1920, 1344)
 texture = ExtResource("1_n05l2")
 
-[node name="FinishLine" parent="." instance=ExtResource("5_sui5d")]
-unique_name_in_owner = true
-process_mode = 3
-position = Vector2(576, 1560)
-area_width = 256
-
-[node name="Runner" parent="." instance=ExtResource("2_umstd")]
-unique_name_in_owner = true
-process_mode = 3
-position = Vector2(624, 1544)
-
 [node name="Circuit" parent="." instance=ExtResource("4_k5dwk")]
-process_mode = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CountDown" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
-process_mode = 3
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -56,6 +63,4 @@ vertical_alignment = 1
 script = ExtResource("8_m4cfg")
 
 [node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_mi12k")]
-unique_name_in_owner = true
 menu_opened_amount = 0.993
-metadata/_edit_use_anchors_ = true
