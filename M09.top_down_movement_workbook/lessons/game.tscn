@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://domdidx11fybt"]
+[gd_scene load_steps=11 format=3 uid="uid://domdidx11fybt"]
 
 [ext_resource type="Script" path="res://lessons/game.gd" id="1_1d2fy"]
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_n05l2"]
@@ -9,26 +9,24 @@
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_0gqic"]
 [ext_resource type="Script" path="res://assets/countdown/count_down.gd" id="8_m4cfg"]
 [ext_resource type="PackedScene" uid="uid://bhfhmo4iqyvde" path="res://lessons/pause_screen.tscn" id="9_mi12k"]
+[ext_resource type="PackedScene" uid="uid://dje526462m8jk" path="res://lessons/simple_obstacle.tscn" id="10_h18vx"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1d2fy")
 
 [node name="CircuitBackground" type="Sprite2D" parent="."]
-process_mode = 3
 z_index = -1
 position = Vector2(1920, 1344)
 texture = ExtResource("1_n05l2")
 
 [node name="FinishLine" parent="." instance=ExtResource("5_sui5d")]
 unique_name_in_owner = true
-process_mode = 3
 position = Vector2(576, 1560)
 area_width = 256
 
 [node name="Runner" parent="." instance=ExtResource("2_umstd")]
 unique_name_in_owner = true
-process_mode = 3
 position = Vector2(904, 800)
 
 [node name="Bouncer" parent="." instance=ExtResource("5_mkmv4")]
@@ -36,13 +34,11 @@ unique_name_in_owner = true
 position = Vector2(664, 1032)
 
 [node name="Circuit" parent="." instance=ExtResource("4_k5dwk")]
-process_mode = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CountDown" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
-process_mode = 3
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -62,5 +58,10 @@ script = ExtResource("8_m4cfg")
 
 [node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_mi12k")]
 unique_name_in_owner = true
+process_mode = 3
+visible = false
 menu_opened_amount = 0.993
 metadata/_edit_use_anchors_ = true
+
+[node name="SimpleObstacle" parent="." instance=ExtResource("10_h18vx")]
+position = Vector2(1336, 488)

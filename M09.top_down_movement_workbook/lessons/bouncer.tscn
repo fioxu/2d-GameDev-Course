@@ -84,3 +84,16 @@ unique_name_in_owner = true
 position = Vector2(0, -32)
 scale = Vector2(0.17, 0.17)
 shape = SubResource("CircleShape2D_r103h")
+
+[node name="Raycasts" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -10.69)
+scale = Vector2(0.5, 0.5)
+
+[node name="RayCast2D" type="RayCast2D" parent="Raycasts"]
+rotation = 0.785397
+target_position = Vector2(100, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Raycasts"]
+rotation = 2.35619
+target_position = Vector2(100, 0)
