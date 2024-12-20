@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://domdidx11fybt"]
+[gd_scene load_steps=10 format=3 uid="uid://domdidx11fybt"]
 
 [ext_resource type="Script" path="res://lessons/game.gd" id="1_1d2fy"]
 [ext_resource type="PackedScene" uid="uid://dje526462m8jk" path="res://lessons/simple_obstacle.tscn" id="1_bapfk"]
@@ -8,19 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="5_sui5d"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_0gqic"]
 [ext_resource type="Script" path="res://assets/countdown/count_down.gd" id="8_m4cfg"]
+[ext_resource type="PackedScene" uid="uid://bhfhmo4iqyvde" path="res://lessons/pause_screen.tscn" id="9_mi12k"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1d2fy")
 
-[node name="CircuitBackground" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(1920, 1344)
-texture = ExtResource("1_n05l2")
-
 [node name="Runner" parent="." instance=ExtResource("2_umstd")]
 unique_name_in_owner = true
 position = Vector2(624, 1544)
+
+[node name="FinishLine" parent="." instance=ExtResource("5_sui5d")]
+unique_name_in_owner = true
+position = Vector2(576, 1560)
+area_width = 256
 
 [node name="SimpleObstacle" parent="." instance=ExtResource("1_bapfk")]
 position = Vector2(1344, 416)
@@ -34,12 +35,12 @@ position = Vector2(2024, 416)
 [node name="SimpleObstacle4" parent="." instance=ExtResource("1_bapfk")]
 position = Vector2(2320, 496)
 
-[node name="Circuit" parent="." instance=ExtResource("4_k5dwk")]
+[node name="CircuitBackground" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1920, 1344)
+texture = ExtResource("1_n05l2")
 
-[node name="FinishLine" parent="." instance=ExtResource("5_sui5d")]
-unique_name_in_owner = true
-position = Vector2(576, 1560)
-area_width = 256
+[node name="Circuit" parent="." instance=ExtResource("4_k5dwk")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -57,7 +58,9 @@ offset_bottom = 109.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("7_0gqic")
-text = "test"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("8_m4cfg")
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_mi12k")]
+visible = false
