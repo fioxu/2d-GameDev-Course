@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://domdidx11fybt"]
+[gd_scene load_steps=9 format=3 uid="uid://domdidx11fybt"]
 
 [ext_resource type="Script" path="res://lessons/game.gd" id="1_1d2fy"]
 [ext_resource type="PackedScene" uid="uid://dje526462m8jk" path="res://lessons/simple_obstacle.tscn" id="1_bapfk"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://besl2b0j8rv01" path="res://lessons/runner.tscn" id="2_umstd"]
 [ext_resource type="PackedScene" uid="uid://dhnq1dpe5j5si" path="res://lessons/circuit.tscn" id="4_k5dwk"]
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="5_sui5d"]
+[ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_0gqic"]
+[ext_resource type="Script" path="res://assets/countdown/count_down.gd" id="8_m4cfg"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -17,6 +19,7 @@ position = Vector2(1920, 1344)
 texture = ExtResource("1_n05l2")
 
 [node name="Runner" parent="." instance=ExtResource("2_umstd")]
+unique_name_in_owner = true
 position = Vector2(624, 1544)
 
 [node name="SimpleObstacle" parent="." instance=ExtResource("1_bapfk")]
@@ -37,3 +40,24 @@ position = Vector2(2320, 496)
 unique_name_in_owner = true
 position = Vector2(576, 1560)
 area_width = 256
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CountDown" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -109.5
+offset_right = 148.0
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_0gqic")
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_m4cfg")

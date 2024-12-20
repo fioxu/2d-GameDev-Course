@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var _finish_line: FinishLine = $FinishLine
+@onready var _count_down: CountDown = $CanvasLayer/CountDown
+@onready var _runner: Runner = %Runner
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,6 +28,12 @@ func _ready() -> void:
 		get_tree().reload_current_scene
 	)
 
+	_count_down.start_counting()
+	_runner.set_physics_process(false)
+	_count_down.counting_finished.connect(
+		func() -> void:
+			_runner.set_physics_process(true)
+	)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
